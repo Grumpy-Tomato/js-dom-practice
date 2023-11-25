@@ -35,3 +35,35 @@ container.appendChild(pinkDiv)
 pinkDiv.appendChild(inDivH1);
 pinkDiv.appendChild(meTooP);
 
+// alert function
+let alertFunction = () => alert("HELLO WORLD!");
+
+// create hello world functionality for button
+const btn = document.querySelector('#btn');
+btn.onclick = alertFunction;
+
+// create hello world functionality for button 2
+const btn2 = document.querySelector('#btn-2');
+btn2.addEventListener('click', alertFunction)
+
+btn2.addEventListener('click', function(e) {
+    console.log(e.target);
+});
+
+btn.addEventListener('click', function (e) {
+
+    if (e.target.style.backgroundColor == 'blue') {
+        e.target.style.backgroundColor = 'red';
+    } else {
+        e.target.style.backgroundColor = 'blue';
+    }
+});
+
+// add new event to all buttons
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', function (e) {
+        e.target.style.color = 'pink';
+    });
+});
